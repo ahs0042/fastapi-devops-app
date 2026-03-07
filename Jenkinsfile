@@ -2,7 +2,7 @@ pipeline {
     agent any
 
     environment {
-        IMAGE_NAME = 'ahs0042/fastapi-app:latest'
+        IMAGE_NAME = 'aslaughter10/fastapi-app:latest'
     }
 
     stages {
