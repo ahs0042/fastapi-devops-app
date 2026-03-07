@@ -31,5 +31,11 @@ pipeline {
                 sh 'docker push $IMAGE_NAME'
             }
         }
+
+        stage('Deploy') {
+            steps {
+                sh 'cd /home/ubuntu/fastapi-docker && docker-compose pull && docker-compose up -d'
+            }
+        }
     }
 }
