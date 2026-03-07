@@ -34,7 +34,12 @@ pipeline {
 
         stage('Deploy') {
             steps {
-                sh 'cd /home/ubuntu/fastapi-docker && docker-compose pull && docker-compose up -d'
+                sh '''
+		cd /home/ubuntu/fastapi-docker
+		docker compose down || true
+		docker compose pull
+		docker compose up -d
+		'''
             }
         }
     }
